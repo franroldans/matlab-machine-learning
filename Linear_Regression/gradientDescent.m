@@ -13,7 +13,7 @@ for iter = 1:num_iters
     
     %Compute the derivative term to obtain desired theta:
     for i=1:m
-        tmp0 = temp0 + (theta' * X(i,:)' - y(i)); 
+        tmp0 = tmp0 + (theta' * X(i,:)' - y(i)); 
         tmp1 = tmp1 + (theta' * X(i,:)' - y(i)) * X(i,2);
     end
     theta(1) = theta(1) - (alpha/m) * tmp0;
