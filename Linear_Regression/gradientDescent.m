@@ -16,12 +16,11 @@ for iter = 1:num_iters
         tmp0 = tmp0 + (theta' * X(i,:)' - y(i)); 
         tmp1 = tmp1 + (theta' * X(i,:)' - y(i)) * X(i,2);
     end
-    theta(1) = theta(1) - (alpha/m) * tmp0;
-    theta(2) = theta(2) - (alpha/m) * tmp1;
+    theta(1) = theta(1) - alpha * tmp0 / m;
+    theta(2) = theta(2) - alpha * tmp1 / m;
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
 
 end
- %plotData(1:num_iters, J_history);
 end
